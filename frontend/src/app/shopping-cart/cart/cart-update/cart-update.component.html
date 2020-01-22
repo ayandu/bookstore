@@ -1,0 +1,31 @@
+<p><b>Update Per Book</b></p>
+<p>Price per unit $ {{book.price}}</p>
+<p>Quantity {{quantity}}</p>
+<p>Total {{total | currency:'USD'}}</p>
+<button class="btn-primary route_link" (click)="onRemove(book)"><i class="fa fa-minus"></i></button>&nbsp;
+<button class="btn-primary route_link" (click)="onAdd(book)"><i class="fa fa-plus"></i></button>&nbsp;
+<button class="btn-primary route_link" (click)="onDelete(book)"><i class="fa fa-trash-o"></i></button>
+
+
+
+
+
+<!--
+
+
+<div *ngIf="status; else elseBlock">
+    <app-book-detail [book]="book"  (hideDetailEventEmitter)="hideDetail($event)"></app-book-detail>
+</div>
+<ng-template #elseBlock>
+    <br>
+        <h1>
+            <b>We have great books to read in store!</b>
+        </h1>
+    <br>
+    <div class="row">
+        <app-book-item   *ngFor="let b of books" [book]="b" (clickedEventEmitter)="isClicked($event)"></app-book-item>
+    </div> 
+</ng-template>
+
+
+-->

@@ -1,0 +1,45 @@
+
+
+<div *ngIf="isEmpty; else elseBlock">
+    <div class="row-md-2"></div>
+    <div class="row-md-8 d-flex justify-content-center">
+        <h1>
+            <b>
+                <p>
+                    Your <i class='fa fa-shopping-cart fa-lg' style='font-size:48px;color:red'></i> is empty!
+                </p>
+            </b>
+        </h1>
+    </div>
+    <div class="row-md-2 d-flex justify-content-center">
+        <button class="btn-primary" routerLink="">Continue shopping</button>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <br>
+        <h1>
+            <b>Shopping cart!</b>
+        </h1>
+    <br>
+    <div class="row">
+        <div class="col-md-9">
+            <app-cart *ngFor="let book of unique; let i = index" [book]="book" ></app-cart>
+        </div>
+        <div class="col-md-3">
+            <app-cart-summary [books]="books"></app-cart-summary>
+        </div>
+    </div> 
+
+
+
+    <!--
+        <br>
+
+    <p *ngFor="let b of books; let i = index" >{{b.title}} <button class="btn-primary" (click)="onClick(i)">remove</button></p>
+    <br>
+    <p>The total price is $ {{total}}</p>
+
+    -->
+    
+</ng-template>
+
