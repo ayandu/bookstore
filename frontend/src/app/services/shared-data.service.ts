@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Book } from '../model/book';
 import { from } from 'rxjs'
 import { tap, distinct} from 'rxjs/operators'
+import { Cart } from '../model/cart';
+import { Customer } from '../model/customer';
+import { Order } from '../model/order';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +13,9 @@ export class SharedDataService {
   
   books = new Array<Book>();
   total = 0;
+  orders = new Array<Order>();
+  carts = new Array<Cart>();
+  customers = new Array<Customer>();
 
   addBook(book: Book){
     this.books.push(book);
@@ -69,6 +75,21 @@ export class SharedDataService {
       for(let i = 0 ; i < this.books.length; i++){
         if( this.books[i].id === book.id) {this.books.pop(); i--;}
       }
+  }
+
+  addOrder(data: Order) {
+    this.orders.push(data);
+  }
+  addCart(data: Cart) {
+    this.carts.push(data);
+  }
+  addCustomer(data: Customer) {
+    this.customers.push(data);
+  }
+  getIds(): string[] {
+    let ids: string[] = [];
+    this.books.forEach( book => ids.push(book.id));
+    return ids;
   }
   
   constructor() {}

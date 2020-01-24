@@ -9,6 +9,7 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { AdminComponent } from './admin/admin.component';
 import { BooksComponent } from './admin/books/books.component';
 import { OrdersComponent } from './admin/orders/orders.component';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "checkout", component: CheckoutPageComponent },
   { path: "admin", redirectTo:"admin/books", pathMatch:"full"},
   {path: "admin/books", component: BooksComponent},
-  { path: "admin/orders", component: OrdersComponent}
+  { path: "admin/orders", component: OrdersComponent},
+  {path: "thanks", component: ThankYouPageComponent}
 ];
 
 @NgModule({

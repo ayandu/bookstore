@@ -1,1 +1,17 @@
-<p>checkout-page works!</p>
+<div class="row">
+    <h1>
+        <b><br>
+            Shipping
+        </b>
+    </h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-customer-form></app-customer-form>
+    </div>
+    <div class="col-md-6">
+        <app-order-summary-heading></app-order-summary-heading>
+        <app-order-book-info *ngFor="let book of unique" [book]="book"></app-order-book-info>
+        <app-order-total></app-order-total>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-2">&nbsp;
+        <b>{{quantity}}</b>
+    </div>
+    <div class="col-md-6">
+        {{book.title}}
+    </div>
+    <div class="col-md-4">
+        {{ quantity * book.price| currency:"USD"}}
+    </div>
+</div>
+<br>

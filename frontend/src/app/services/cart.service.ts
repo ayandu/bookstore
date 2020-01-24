@@ -18,8 +18,8 @@ export class CartService {
     return this.http.get<Cart>(`http://localhost:8080/cart` + `/` + id);
   }
 
-  saveCart(ids: string[]){
-    return this.http.post(`http://localhost:8080/create-cart`, ids);
+  saveCart(ids: string[]) : Observable<Cart>{
+    return this.http.post<Cart>(`http://localhost:8080/create-cart`, ids);
   }
 
   removeBookfromCart(id: string, bookId: string){

@@ -3,6 +3,7 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 import { Cart } from 'src/app/model/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { Book } from 'src/app/model/book';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-summary',
@@ -16,21 +17,20 @@ export class CartSummaryComponent implements OnInit {
   items = 0;
   
   constructor(private sharedDataService: SharedDataService,
-        private cartService: CartService) { }
+        private router: Router) { }
 
   ngOnInit() {
     this.setProperties();
   }
 
-  placeOrder(){
+  checkout(){
     let ids: string[] = [];
     this.sharedDataService.getBooks().forEach( book => ids.push(book.id));
     if( ids.length !== 0){
-      this.cartService.saveCart(ids).subscribe( data =>{ this.sharedDataService.clearBooks();
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));}, error => "The Server are down!!");
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(ids, null, 4));
+      this.router.navigate([`checkout`]);
     }
     else alert('FAIL!! :-(\n\n' + JSON.stringify(ids, null, 4));
-    
   }
 
   setProperties(){

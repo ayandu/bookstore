@@ -32,6 +32,11 @@ import { CartUpdateComponent } from './shopping-cart/cart/cart-update/cart-updat
 import { CartImageComponent } from './shopping-cart/cart/cart-image/cart-image.component';
 import { CartInfoComponent } from './shopping-cart/cart/cart-info/cart-info.component';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
+import { CustomerFormComponent } from './checkout-page/customer-form/customer-form.component';
+import { OrderTotalComponent } from './checkout-page/order-total/order-total.component';
+import { OrderBookInfoComponent } from './checkout-page/order-book-info/order-book-info.component';
+import { OrderSummaryHeadingComponent } from './checkout-page/order-summary-heading/order-summary-heading.component';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +62,12 @@ import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.
     CartUpdateComponent,
     CartImageComponent,
     CartInfoComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    CustomerFormComponent,
+    OrderTotalComponent,
+    OrderBookInfoComponent,
+    OrderSummaryHeadingComponent,
+    ThankYouPageComponent
     ],
   imports: [
     BrowserModule,
